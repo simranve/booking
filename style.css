@@ -1,8 +1,7 @@
 body {
-  background-image: url('../img/download.jpg');
-  background-size: cover;
-  
+    /*background-image: linear-gradient(to right, #7B1FA2, #E91E63)*/
 }
+
 
 .section {
     position: relative;
@@ -19,17 +18,19 @@ body {
 }
 
 #booking {
-    font-family: sans-serif
+    font-family: 'Raleway', sans-serif
 }
 
 .booking-form {
     position: relative;
+    max-width: 642px;
     width: 100%;
     margin: auto;
-    /* padding: 40px; */
+    padding: 40px;
     overflow: hidden;
+    background-image: url('https://i.imgur.com/8z1tx3u.jpg');
     background-size: cover;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     z-index: 20
 }
 
@@ -40,6 +41,7 @@ body {
     right: 0;
     bottom: 0;
     top: 0;
+    background: rgba(0, 0, 0, 0.7);
     z-index: -1
 }
 
@@ -54,7 +56,7 @@ body {
     text-transform: capitalize;
     font-size: 42px;
     margin: 0px;
-    color: #080707
+    color: #fff
 }
 
 .booking-form .form-group {
@@ -67,8 +69,8 @@ body {
     height: 30px;
     padding: 0px 20px;
     border: none;
-    /* border-radius: 40px; */
-    color: #0e0c0c;
+    border-radius: 40px;
+    color: #fff;
     -webkit-box-shadow: 0px 0px 0px 2px transparent;
     box-shadow: 0px 0px 0px 2px transparent;
     -webkit-transition: 0.2s;
@@ -76,15 +78,15 @@ body {
 }
 
 .booking-form .form-control::-webkit-input-placeholder {
-    color: rgba(34, 28, 28, 0.5)
+    color: rgba(255, 255, 255, 0.5)
 }
 
 .booking-form .form-control:-ms-input-placeholder {
-    color: rgba(34, 28, 28, 0.5)
+    color: rgba(255, 255, 255, 0.5)
 }
 
 .booking-form .form-control::placeholder {
-    color: rgba(34, 28, 28, 0.5)
+    color: rgba(255, 255, 255, 0.5)
 }
 
 .booking-form .form-control:focus {
@@ -97,7 +99,7 @@ body {
 }
 
 .booking-form input[type="date"].form-control:invalid {
-    color: rgba(34, 28, 28, 0.5)
+    color: rgba(255, 255, 255, 0.5)
 }
 
 .booking-form input[type="date"].form-control+.form-label {
@@ -112,7 +114,7 @@ body {
 }
 
 .booking-form select.form-control:invalid {
-    color: rgba(34, 28, 28, 0.5)
+    color: rgba(255, 255, 255, 0.5)
 }
 
 .booking-form select.form-control+.select-arrow {
@@ -126,7 +128,7 @@ body {
     height: 32px;
     text-align: center;
     pointer-events: none;
-    color: rgba(34, 28, 28, 0.5);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 14px
 }
 
@@ -167,13 +169,13 @@ body {
 }
 
 .booking-form .submit-btn {
-    color: #110e0e;
-    background-color: #bd4f0b;
-    /* font-weight: 700;
-    height: 30px; */
-    padding: 10px 30px;
-    /* width: 100%;
-    border-radius: 40px; */
+    color: #fff;
+    background-color: #e35e0a;
+    font-weight: 700;
+    height: 30px;
+    /*padding: 10px 30px;*/
+    width: 100%;
+    border-radius: 40px;
     border: none;
     text-transform: uppercase;
     font-size: 16px;
@@ -260,14 +262,14 @@ body {
   bottom: 0;
   right: 0;
   top: 0;
-  background: rgba(34, 28, 28, 0.5);
+  background: #E3F2FD;
 }
 
 .popup {
   position: relative;
   width: 50em;
   /*height: 35em;*/
-  background: rgb(231 221 221 / 50%);
+  background: #FFFFFF;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -275,7 +277,7 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-  background: rgba(34, 28, 28, 0.5);
+  background: #FCFCFC;
   border-bottom-left-radius: var(--radius-sm);
   transition: background-color .25s ease-in-out;
 }
@@ -299,25 +301,25 @@ body {
 }
 
 .card-data > div {
-  padding-bottom: 1.2em;
+  padding-bottom: 1.5em;
 }
 .card-data > div:first-child {
-  padding-top: 1.2em;
+  padding-top: 1.5em;
 }
 
 .card-property-title {
   display: flex;
   flex-direction: column;
   flex: 1 1;
-  margin-right: 1.2em;
+  margin-right: 0.5em;
 }
 .card-property-title strong {
   padding-bottom: .5em;
-  font-size: 1.2em;
+  font-size: .85em;
 }
 .card-property-title span {
   color: var(--secondary-text);
-  font-size: 1.2em;
+  font-size: .75em;
 }
 .card-property-value {
   flex: 1 1;
@@ -333,7 +335,7 @@ body {
 .card-number-field input { 
   width: 3em;
   height: 100%;
-  padding: .7em 0;
+  padding: .5em 0;
   margin: 0 .75em;
   border: none;
   color: #888888;
@@ -345,7 +347,7 @@ body {
 
 .timer span {
   background: #311B92;
-  color: rgba(34, 28, 28, 0.5);
+  color: #FFFFFF;
   width: 1.2em;
   padding: 4px 0;
   display: inline-block;
@@ -365,7 +367,7 @@ body {
   height: 100%;
   font-weight: 600;
   font-size: 1em;
-  color: rgba(34, 28, 28, 0.5);
+  color: #FFFFFF;
   border: none;
   border-radius: var(--radius-md);
   transition: background-color .2s ease-in-out;
@@ -431,7 +433,7 @@ body {
   border-radius: 50%;
   left: -0.8em;
   bottom: -0.8em;
-  background: rgba(34, 28, 28, 0.5);
+  background: #FFFFFF;
 }
 .purchase-section:after {
   content: '';
@@ -441,7 +443,7 @@ body {
   border-radius: 50%;
   right: -0.8em;
   bottom: -0.8em;
-  background: rgba(34, 28, 28, 0.5);
+  background: #FFFFFF;
 }
 
 .card-mockup {
@@ -450,7 +452,7 @@ body {
   padding: 1.5em 1.2em;
   height: 15em;
   border-radius: var(--radius-md);
-  background: rgb(78 31 31 / 50%);
+  background: #FFFFFF;
   box-shadow: 0 .5em 1em .125em rgba(0,0,0, 0.1);
 }
 .card-mockup:after {
@@ -514,7 +516,7 @@ body {
   border-radius: 50%;
   left: -0.8em;
   top: -0.8em;
-  background: rgba(34, 28, 28, 0.5);
+  background: #FFFFFF;
 }
 .total-section:after {
   content: '';
@@ -524,7 +526,7 @@ body {
   border-radius: 50%;
   right: -0.8em;
   top: -0.8em;
-  background: rgba(34, 28, 28, 0.5);
+  background: #FFFFFF;
 }
 .total-label {
   font-size: 0.8em;
@@ -537,7 +539,6 @@ body {
 .total-section small {
   font-weight: 600;
 }
-
 .loader_div{
   position: absolute;
   width: 100%;
@@ -564,42 +565,14 @@ body {
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }
-.loader {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  position: absolute;
-  animation: rotate 1s linear infinite;
-  margin: auto;
-  z-index: 9999;
-  top: calc( 50% - 60px );
-  left: calc( 50% - 60px );
-  
-}
-.loader::before , .loader::after {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  inset: 0px;
-  border-radius: 50%;
-  border: 5px solid #FFF;
-  animation: prixClipFix 2s linear infinite ;
-}
-.loader::after{
-  border-color: #FF3D00;
-  animation: prixClipFix 2s linear infinite , rotate 0.5s linear infinite reverse;
-  inset: 6px;
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
 }
 
-@keyframes rotate {
-  0%   {transform: rotate(0deg)}
-  100%   {transform: rotate(360deg)}
-}
-
-@keyframes prixClipFix {
-    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
-    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
-    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
-    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
-    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

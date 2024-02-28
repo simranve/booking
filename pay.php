@@ -3,15 +3,11 @@ require_once('vendor/autoload.php');
 $data =isset($_GET['data'])?$_GET['data']: null;
 $name = 'Simran Gupta';
 if($data != null){
-	// var_dump(base64_decode($product));die();
-	$data1 = base64_decode($data);
-	$product = json_decode($data1);
+	$product = json_decode(base64_decode($data));
 
 }else{
 	header("Location: index.php");
 }
-// echo "<pre>";
-// var_dump($product);die();
 ?>
 
 <!doctype html>
@@ -31,7 +27,7 @@ if($data != null){
 
     <div class="container">
     	<div class="screen flex-center">
-			<form class="popup flex p-lg" action="thankyou.php" method="get">
+			<form class="popup flex p-lg" action="done.php" method="get">
 				<input type="hidden" name="data" value="<?php echo $data; ?>">
 			    <div class="close-btn pointer flex-center p-sm">
 			      <i class="ai-cross"></i>

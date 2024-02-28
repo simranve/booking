@@ -37,7 +37,7 @@ if(isset($_POST['no_adults']) && $_POST['no_adults']){
 			        $product_list[$key]['currency'] =  $value->currency;
 			        $product_list[$key]['productCode'] =  $value->productCode;
 			        $product_list[$key]['base_64'] = base64_encode(json_encode($product_list[$key]));
-		        
+			        $product_list[$key]['priceOptions'] =  $value->priceOptions;
 				}
 			}
 		}
@@ -92,7 +92,7 @@ if(isset($_POST['no_adults']) && $_POST['no_adults']){
                             <div class="form-header">
                                 <h2 class="h2 text-black text-bold">Make Your Reservation here!!</h2>
                             </div>
-                            <form method="post">
+                            <form method="post" class="search_form">
                                 <div class="row">
                                 <div class="col-md-6">
                                         <div class="form-group">
@@ -149,7 +149,7 @@ if(isset($_POST['no_adults']) && $_POST['no_adults']){
                                 </div>
 								<div class="row">
                                     <div class="col-md-12 mt-1">
-                                        <button class="submit-btn mt-4">Search</button>
+                                        <button class="submit-btn mt-4" onclick="this.classList.toggle('button--loading')">Search</button>
                                     </div>
                                 </div>
                                 <!-- <div class="form-btn"> <button class="submit-btn">Book Now</button> </div> -->
@@ -161,6 +161,7 @@ if(isset($_POST['no_adults']) && $_POST['no_adults']){
             </div>
         </div>
     </div>
+	<div class="text-center loader_div" style="display: none;"><div class="loader"></div></div>
     <?php if(count($product_list)){ ?>
 
     <div class="album py-5 bg-dark">
@@ -179,12 +180,21 @@ if(isset($_POST['no_adults']) && $_POST['no_adults']){
                             <h2 class="h6"><?php echo $value['name']; ?></h2>
                             <p class="card-text"><?php echo $value['shortDescription']; ?></p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <big class="text-muted"><?php echo $value['currency'].' '.$value['price']; ?></big>
+                            <div class="justify-content-between align-items-center">
+                            <?php if(isset($value['priceOptions']) && count($value['priceOptions'])){ foreach ($value['priceOptions'] as $key1 => $value1) { if($key1 <3){ 
+									if($key1 == 0) $label = 'Adult';
+									if($key1 == 1) $label = 'Child';
+									if($key1 == 2) $label = 'Infant';?>
+									<big class="text-muted"><?php echo $value1->price.' per '.$label; ?></big><br>
+								<?php }}}else{?>	
+								<big class="text-muted"><?php echo $value['price']; ?>/Adult</big>
+								<?php }?>
+                                </div>
                                 <div class="btn-group">
                                     <a type="button" class="btn btn-sm btn-outline-secondary"
                                         href="product.php?data=<?php echo $value['base_64']; ?>">View product</button>
                                         <a type="button" class="btn btn-outline-secondary"
-                                            href="payment.php?data=<?php echo $value['base_64']; ?>">Book Now!!</a>
+                                            href="pay.php?data=<?php echo $value['base_64']; ?>">Book Now!!</a>
                                 </div>
                             </div>
                         </div>
@@ -209,6 +219,14 @@ if(isset($_POST['no_adults']) && $_POST['no_adults']){
         fg: '#eceeef',
         text: 'No image here'
     });
+    </script>
+    <script type="text/javascript">
+      	$( document ).ready(function() {
+		   $(".search_form").submit(function(evt) {
+		   	console.log('hi');
+		      $(".loader_div").show();
+		  });
+		});
     </script>
 </body>
 

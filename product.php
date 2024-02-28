@@ -35,7 +35,7 @@ if($data != null){
 		    <big class="text-muted"><?php echo $value['currency'].' '.$value['price']; ?></big>
         </div>
         
-        <a type="button" class="btn btn-outline-secondary" href="payment.php?data=<?php echo $data; ?>">Book Now!!</a>
+        <a type="button" class="btn btn-outline-secondary" href="pay.php?data=<?php echo $data; ?>">Book Now!!</a>
       </div>
     </div>
   </div>
